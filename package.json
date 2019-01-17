@@ -1,0 +1,28 @@
+{
+  "name": "clock",
+  "version": "1.0.0",
+  "description": "A clock application that runs using node.js",
+  "main": "clock.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/construktivist/node-clock.git"
+  },
+  "keywords": [
+    "clock",
+    "timer",
+    "date",
+    "alarm"
+  ],
+  "author": "Keegan Kelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/construktivist/node-clock/issues"
+  },
+  "homepage": "https://github.com/construktivist/node-clock#readme",
+  "dependencies": {
+    "moment": "^2.23.0"
+  }
+}
