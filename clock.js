@@ -9,10 +9,9 @@ console.log(
 )
 
 var time = moment(process.argv[2]);
- console.log(typeof time);
 
 function setAlarm(time) {
- fs.writeFile("alarm.js".time, (err) => {
+ fs.writeFile("alarm.js", time, (err) => {
    if (err) throw err;
    console.log("Alarm has been set.");
  });
