@@ -8,13 +8,19 @@ console.log(
   "==========================="
 )
 
-var time = moment(process.argv[2]);
 
-function setAlarm(time) {
- fs.writeFile("alarm.js", time, (err) => {
+function setAlarm() {
+
+  var alarm = moment(
+    process.argv[3] +
+    process.argv[4] +
+    process.argv[5],
+    "MM-DD-YYYY HH:mma");
+
+ fs.writeFile("alarm.js", alarm, (err) => {
    if (err) throw err;
-   console.log("Alarm has been set.");
+   console.log("The alarm has been set to " + alarm);
  });
 }
 
-setAlarm(time);
+setAlarm();
