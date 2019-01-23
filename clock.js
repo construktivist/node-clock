@@ -1,11 +1,20 @@
-var fs = require("fs");
 var moment  = require("moment");
+var func = require("./functions.js");
 
+exports.arguments = {
+  date: process.argv[3],
+  time: process.argv[4],
+  meridiem: process.argv[5]
+};
+
+console.log(process.argv);
+console.log(arguments.time);
 
 
 switch (process.argv[2]) {
   case "set-alarm":
-    setAlarm();
+    func.functions.setAlarm();
+    console.log("Switch set-alarm");
     break;
   default:
   console.log(
@@ -13,20 +22,5 @@ switch (process.argv[2]) {
     "The current time is " + moment().format("HH:mma") + "\n" +
     "Today's date is " + moment().format("MM-DD-YYYY") + "\n" +
     "==========================="
-  )
-}
-
-
-function setAlarm() {
-
-  var alarm = moment(
-    process.argv[3] +
-    process.argv[4] +
-    process.argv[5],
-    "MM-DD-YYYY HH:mma");
-
- fs.writeFile("alarm.js", alarm, (err) => {
-   if (err) throw err;
-   console.log("The alarm has been set to " + alarm);
- });
+  );
 }
