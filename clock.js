@@ -1,12 +1,20 @@
 var fs = require("fs");
 var moment  = require("moment");
 
-console.log(
-  "===========================" + "\n" +
-  "The current time is " + moment().format("HH:mma") + "\n" +
-  "Today's date is " + moment().format("MM-DD-YYYY") + "\n" +
-  "==========================="
-)
+
+
+switch (process.argv[2]) {
+  case "set-alarm":
+    setAlarm();
+    break;
+  default:
+  console.log(
+    "===========================" + "\n" +
+    "The current time is " + moment().format("HH:mma") + "\n" +
+    "Today's date is " + moment().format("MM-DD-YYYY") + "\n" +
+    "==========================="
+  )
+}
 
 
 function setAlarm() {
@@ -22,5 +30,3 @@ function setAlarm() {
    console.log("The alarm has been set to " + alarm);
  });
 }
-
-setAlarm();
