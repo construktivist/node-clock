@@ -16,6 +16,10 @@ switch (process.argv[2]) {
     func.functions.setAlarm();
     console.log("Switch set-alarm");
     break;
+    case "alarm":
+      func.functions.logAlarm();
+      console.log("Switch alarm");
+      break;
   default:
   console.log(
     "===========================" + "\n" +

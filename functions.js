@@ -3,8 +3,9 @@ var moment  = require("moment");
 var fs = require("fs");
 
 exports.functions = {
+
   setAlarm: function() {
-    console.log("setAlarm");
+    console.log("Function setAlarm");
     var alarm = moment(
       args.arguments.date +
       args.arguments.time +
@@ -15,5 +16,15 @@ exports.functions = {
      if (err) throw err;
      console.log("The alarm has been set to " + alarm);
    });
-  }
+ },
+
+ logAlarm: function() {
+   console.log("Function logAlarm");
+   fs.readFile("alarm.js", "utf8", (err, data) => {
+     if (err) throw err;
+     console.log(data);
+     console.log(moment.unix(data).format("MM-DD-YYYY HH:mm a"));
+   })
+ }
+
 }
